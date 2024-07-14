@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div><img src="red_clc.png" alt="Red Calculator" class="redcalculator" id="calc1"></div>
+    <div><img src="red_clc.png" alt="Red Calculator" class="redcalculator" id="calc2"></div>
+    <h1> Calculator</h1>
+    
+    <div class="grid-container">
+        <div class="calculator-grid">
+            <textarea type="text" id="inputtext" placeholder="0"></textarea>
+            <button>C</button>
+            <button>DEL</button>
+            <button></button>
+            <button>+</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>-</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>*</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>/</button>
+            <button>0</button>
+            <button>.</button>
+            <button>=</button>
+            <button></button>
+
+        </div>
+    </div>
+    
+
+</body>
+
+<script> 
+    const input = document.getElementById('inputtext');
+    const buttons = document.querySelectorAll('button');  //stores a list of all button elements on the page
+    function operation(buttonValue) {
+    if (buttonValue === 'C') { 
+        input.value = ''; // if the button clicked is C then clear the input field
+    } else if (buttonValue === 'DEL') { 
+        input.value = input.value.slice(0, -1); //if the button was delete then delete the last character from the input field
+    } else if (buttonValue === '=') {
+        input.value = calculate(input.value);
+    } else {
+        input.value += buttonValue; // if the button clicked is any other numebr then it adds the pressed button to the input filed space above
+    }
+}
+function calculate(expression) {
+    console.log(expression); //to print the expression in the console , for debugging purposes
+    try {
+        return new Function('return ' + expression)(); //hena ba3ml new anonymous function byt7sb el expression 3ltoul 
+    } catch (error) {
+        return 'Malformed Mathematical Operation';
+    }
+}
+// event listeners
+buttons.forEach(button=> { 
+    let buttonValue = button.innerText;
+    button.addEventListener('click', function(){operation(buttonValue)})
+});
+</script>
+
+</html>
