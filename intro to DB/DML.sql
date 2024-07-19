@@ -1,4 +1,4 @@
--- Insert data into the Employee table
+-- Inserting data into the Employee table
 INSERT INTO Employee (Fname, Lname, SSN, BDATE, Address, Sex, Salary, Superssn, Dno) VALUES
 ('Ahmed', 'Ali', '112233', '1965-01-01', '15 Ali fahmy St.Giza', 'M', 1300, '223344', 10),
 ('Kamel', 'Mohamed', '223344', '1970-10-15', '38 Mohy el dien abo el Ezz St.Cairo', 'M', 1800, '321654', 10),
@@ -9,13 +9,13 @@ INSERT INTO Employee (Fname, Lname, SSN, BDATE, Address, Sex, Salary, Superssn, 
 ('Mariam', 'Adel', '669955', '1982-06-12', '269 El-Haram st. Giza', 'F', 750, '512463', 20),
 ('Maged', 'Raoof', '521634', '1980-04-06', '18 Kholosi st.Shobra.Cairo', 'M', 1000, '968574', 30);
 
--- Insert data into the Department table
+-- Inserting data into the Department table
 INSERT INTO Department (Dname, DNumber, MGRSSN, MGRStartdate) VALUES
 ('DP1', 10, '223344', '2005-01-01'),
 ('DP2', 20, '968574', '2006-03-01'),
 ('DP3', 30, '512463', '2006-06-01');
 
--- Insert data into the WorksFor table
+-- Inserting data into the WorksFor table
 INSERT INTO WorksFor (ESSN, Pno, Hours) VALUES
 ('223344', 100, 10),
 ('223344', 200, 10),
@@ -35,7 +35,7 @@ INSERT INTO WorksFor (ESSN, Pno, Hours) VALUES
 ('521634', 300, 6),
 ('521634', 400, 4);
 
--- Insert data into the Project table
+-- Inserting data into the Project table
 INSERT INTO Project (Pname, Pnumber, Plocation, City, Dnum) VALUES
 ('AL Solimaniah', 100, 'Cairo_Alex Road', 'Alex', 10),
 ('Al Rabwah', 200, '6th of October City', 'Giza', 10),
@@ -45,7 +45,7 @@ INSERT INTO Project (Pname, Pnumber, Plocation, City, Dnum) VALUES
 ('Pitcho american', 600, 'Maady', 'Cairo', 30),
 ('Ebad El Rahman', 700, 'Ring Road', 'Cairo', 20);
 
--- Insert data into the Dependent table
+-- Inserting data into the Dependent table
 INSERT INTO Dependent (ESSN, Dependent_name, Sex, Bdate) VALUES
 ('112233', 'Hala Saied Ali', 'F', '1970-10-18'),
 ('223344', 'Ahmed Kamel Shawki', 'M', '1998-03-27'),
